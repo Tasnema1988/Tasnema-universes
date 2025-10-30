@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>الصفحة الرئيسية — عالم تسنيمة</title>
+
+  <!-- خط Graphics School Regular: تم البحث عنه في مواقع الخطوط مثل dafont.com، وهو خط مجاني. تم إضافته عبر رابط خارجي لأنه غير متوفر في Google Fonts مباشرة. -->
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet"> <!-- بديل مشابه إذا لم يعمل الخط الأصلي، لكن تم استخدام Fredoka One كبديل مرح من بداية الألفينات -->
+  <link rel="stylesheet" href="https://dl.dafont.com/dl/?f=graphics_school_regular" type="text/css"> <!-- رابط مباشر للخط من dafont -->
+
+  <style>
+    /* إعداد عام بالتصميم الداكن مع ألوان فاقعة */
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      min-height: 100vh;
+      font-family: 'Graphics School Regular', 'Fredoka One', sans-serif; /* تغيير الخط إلى Graphics School Regular مع بديل */
+      background: #000000;
+      color: #cc66ff; /* لون بنفسجي فاقع للنص */
+      text-align: right;
+      direction: rtl;
+      overflow-x: hidden;
+    }
+
+    /* رأس الصفحة */
+    header {
+      background: #660099;
+      padding: 10px 15px;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    header h1 {
+      font-size: 1.8rem;
+      color: #ff66cc;
+      font-weight: 900;
+      margin: 0;
+      text-shadow: 2px 2px 5px #990066;
+    }
+
+    /* المحتوى الرئيسي */
+    main {
+      display: flex;
+      max-width: 980px;
+      margin: 20px auto;
+      gap: 15px;
+    }
+
+    /* القائمة الجانبية - تحسين الإطار ليكون أكثر وضوحاً (حدود أقوى ونهايات واضحة) */
+    aside.sidebar {
+      min-width: 180px;
+      background: #1a001a;
+      border: 3px solid #660099; /* زيادة سمك الحدود للوضوح */
+      border-radius: 15px; /* نهايات أكثر وضوحاً (زيادة قليلة) */
+      color: #cc99ff;
+      padding: 15px;
+      box-shadow: 0 0 20px #9900cc; /* ظل أقوى قليلاً للوضوح على الهاتف */
+    }
+
+    aside.sidebar h2 {
+      font-size: 1.3rem;
+      margin-bottom: 12px;
+      text-align: center;
+      color: #ff99ff;
+      font-weight: 900;
+      text-shadow: 1px 1px 3px #660066;
+    }
+
+    /* الجملة المنقولة فوق الأزرار مع الصورة المنقولة بجانبها */
+    aside.sidebar .subtext {
+      text-align: center;
+      margin-bottom: 15px;
+      font-weight: bold;
+      color: #ff66cc;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px; /* مسافة بين الصورة والنص */
+    }
+
+    aside.sidebar .subtext img {
+      width: 30px; /* حجم أكبر للوضوح */
+      height: 30px;
+      vertical-align: middle;
+    }
+
+    aside.sidebar a, aside.sidebar button {
+      display: block;
+      color: #cc99ff;
+      font-weight: 600;
+      margin: 6px 0;
+      text-decoration: none;
+      padding: 6px 10px;
+      border-radius: 8px; /* نهايات أكثر وضوحاً */
+      border: 2px solid #660099; /* حدود واضحة */
+      background: transparent;
+      text-align: right;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    aside.sidebar a:hover, aside.sidebar button:hover {
+      background-color: #660099;
+      color: #ff66cc;
+      text-shadow: 0 0 5px #ff66cc;
+      border-color: #ff66cc; /* تغيير لون الحدود عند التمرير */
+    }
+
+    /* محتوى الصفحة */
+    section.content {
+      flex: 1;
+      background: #ddff99;
+      border-radius: 6px;
+      box-shadow: inset 0 0 10px #99cc33;
+      color: #000;
+      padding: 20px;
+      font-size: 1rem;
+      line-height: 1.5;
+      text-align: justify;
+    }
+
+    section.content h2 {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+      color: #990099;
+      text-shadow: 1px 1px 2px #cc00cc;
+      font-weight: 800;
+      text-align: center;
+    }
+
+    /* إطار جداري للنص - استبدال النص بالجملة الجديدة */
+    .story-frame {
+      border: 3px outset #d2b600; /* إخراج إطار أصفر */
+      background: #fffbb8; /* بودري فاقع للخلفية */
+      padding: 15px;
+      margin: 15px auto 25px auto;
+      font-size: 1rem;
+      color: #4a3b00;
+      line-height: 1.4;
+      box-shadow: inset 2px 2px 5px #ffe966; /* ظل داخلي أصفر */
+      text-align: justify;
+      border-radius: 6px;
+      max-width: 600px;
+    }
+
+    /* أزرار عالم جديدة في المحتوى - استخدام أيقونات قديمة من بداية الألفينات (مثل رموز GeoCities) */
+    nav.btn-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 25px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    button.btn-world {
+      flex: 1 1 40%;
+      min-width: 140px;
+      max-width: 180px;
+      font-family: 'Graphics School Regular', 'Fredoka One', sans-serif;
+      font-size: 1rem;
+      padding: 10px;
+      border: 2px outset #cca300;
+      cursor: pointer;
+      font-weight: 700;
+      color: #664d00;
+      background: #fff4b8;
+      box-shadow: 1px 1px 4px #ffec73;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      border-radius: 5px;
+      direction: ltr; /* للحفاظ على اتجاه النص الأزرار إنجليزي */
+    }
+
+    button.btn-world:hover {
+      background-color: #ffef82;
+      transform: scale(1.05);
+    }
+
+    /* أقسام إضافة المحتوى (صور، فيديوهات، صوتيات) - محمية، لا يمكن إضافة إلا عبر تعديل الكود */
+    .media-section {
+      margin: 20px 0;
+      text-align: center;
+    }
+
+    .media-section img, .media-section video, .media-section audio {
+      max-width: 100%;
+      height: auto;
+      margin: 10px 0;
+      border: 2px solid #660099;
+      border-radius: 5px;
+    }
+
+    /* بوكس النص الجديد - textarea لكل قسم */
+    .text-box {
+      margin: 10px 0;
+      text-align: center;
+    }
+
+    .text-box textarea {
+      width: 100%;
+      max-width: 600px;
+      height: 100px;
+      padding: 10px;
+      border: 2px solid #660099;
+      border-radius: 5px;
+      background: #fffbb8;
+      color: #4a3b00;
+      font-family: 'Graphics School Regular', 'Fredoka One', sans-serif;
+      font-size: 1rem;
+      resize: vertical;
+      direction: rtl;
+    }
+
+    .text-box textarea.readonly {
+      background: #f0f0f0;
+      cursor: not-allowed;
+    }
+
+    /* استجابة التصميم - تحسين للهاتف */
+    @media (max-width: 800px) {
+      main {
+        flex-direction: column;
+        margin: 15px;
+      }
+      aside.sidebar {
+        min-width: 100%;
+        border-radius: 15px; /* نهايات أكثر وضوحاً على الهاتف */
+        box-shadow: 0 0 20px #9900cc; /* ظل أقوى */
+      }
+      section.content {
+        padding: 15px 10px;
+      }
+      .story-frame, nav.btn-container {
+        max-width: 100%;
+      }
+      button.btn-world {
+        flex: 1 1 100%;
+        min-width: 100%;
+        direction: ltr;
+      }
+      aside.sidebar button {
+        font-size: 0.9rem; /* تبسيط للهاتف */
+        padding: 8px 12px;
+      }
+      .text-box textarea {
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header role="banner">
+    <h1>عالم تسنيمة</h1>
+  </header>
+
+  <!-- البوكس الأول (story-frame) مع الجملة الجديدة -->
+  <div class="story-frame" aria-live="polite" aria-atomic="true">
+    <p>تعالوا نأخذكم معاي في عوالمي لإنه تسنيمة مش عالم واحد، تسنيمة معبية عوالم.</p>
+  </div>
+
+  <!-- البوكس الثاني الجديد (main) -->
+  <main role="main">
+    <aside class="sidebar" aria-label="القائمة الجانبية">
+      <h2>عوالم تسنيمة</h2>
+      <!-- الجملة المنقولة هنا فوق الأزرار مع الصورة المنقولة بجانبها -->
+      <p class="subtext">
+        <img src="" alt="شعار عالم تسنيمة" /> <!-- placeholder فارغ، أضف رابط صورة لاحقاً -->
+        اختار العالم اللي تحب تمشيله اليوم
+      </p>
+      <button onclick="loadPage('world1.html')">ابتلشنا بالطب والدفعة</button>
+      <button onclick="loadPage('world2.html')">أنا مش عرفاني</button>
+      <button onclick="loadPage('world3.html')">أبو عادل الحكواتي is back</button>
+      <button onclick="loadPage('world4.html')">خربوشات</button>
+      <button onclick="loadPage('world5.html')">فن فن مش عن عن</button>
+    </aside>
+
+    <section class="content" aria-label="محتوى الموقع - القصة والعوالم">
+      <h2>اهني مش حتلقوا أي حد غيري أنا وشخصياتي الثانية</h2>
+
+      <!-- أقسام إضافة المحتوى (محمية - لا يمكن إضافة إلا عبر تعديل الكود مباشرة) -->
+      <!-- لإضافة صورة: غير src="" إلى رابط الصورة أو مسار الملف -->
+      <div class="media-section">
+        <h3>صور</h3>
+        <img src="" alt="صورة" /> <!-- غير src هنا لإضافة صورة -->
+        <!-- بوكس النص الجديد -->
+        <div class="text-box">
+          <textarea id="image-text" placeholder="أضف نصاً هنا (لصاحبة الموقع فقط)"></textarea>
+        </div>
+      </div>
+      <!-- لإضافة فيديو: غير src="" إلى رابط الفيديو أو مسار الملف -->
+      <div class="media-section">
+        <h3>فيديوهات</h3>
+        <video controls>
+          <source src="" type="video/mp4"> <!-- غير src هنا لإضافة فيديو -->
+        </video>
+        <!-- بوكس النص الجديد -->
+        <div class="text-box">
+          <textarea id="video-text" placeholder="أضف نصاً هنا (لصاحبة الموقع فقط)"></textarea>
+        </div>
+      </div>
+      <!-- لإضافة صوت: غير src="" إلى رابط الصوت أو مسار الملف -->
+      <div class="media-section">
+        <h3>صوتيات</h3>
+        <audio controls>
+          <source src="" type="audio/mpeg"> <!-- غير src هنا لإضافة صوت -->
+        </audio>
+        <!-- بوكس النص الجديد -->
+        <div class="text-box">
+          <textarea id="audio-text" placeholder="أضف نصاً هنا (لصاحبة الموقع فقط)"></textarea>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    // دالة لفتح الصفحات الثانية
+    function loadPage(page) {
+      window.location.href = page;
+    }
+
+    // دوال لإدارة النصوص باستخدام localStorage
+    function loadTexts() {
+      const imageText = localStorage.getItem('image-text') || '';
+      const videoText = localStorage.getItem('video-text') || '';
+      const audioText = localStorage.getItem('audio-text') || '';
+
+      document.getElementById('image-text').value = imageText;
+      document.getElementById('video-text').value = videoText;
+      document.getElementById('audio-text').value = audioText;
+
+      // تحقق من كلمة المرور للسماح بالتحرير (مثال بسيط: كلمة مرور "admin")
+      const isOwner = prompt('أدخل كلمة المرور للتحرير (إذا كنت صاحبة الموقع):') === 'admin'; // غير 'admin' إلى كلمة مرور حقيقية
+      if (!isOwner) {
+        document.getElementById('image-text').classList.add('readonly');
+        document.getElementById('image-text').readOnly = true;
+        document.getElementById('video-text').classList.add('readonly');
+        document.getElementById('video-text').readOnly = true;
+        document.getElementById('audio-text').classList.add('readonly');
+        document.getElementById('audio-text').readOnly = true;
+      } else {
+        // حفظ النصوص عند التغيير
+        document.getElementById('image-text').addEventListener('input', () => {
+          localStorage.setItem('image-text', document.getElementById('image-text').value);
+        });
+        document.getElementById('video-text').addEventListener('input', () => {
+          localStorage.setItem('video-text', document.getElementById('video-text').value);
+        });
+        document.getElementById('audio-text').addEventListener('input', () => {
+          localStorage.setItem('audio-text', document.getElementById('audio-text').value);
+        });
+      }
+    }
+
+    // تحميل النصوص عند تحميل الصفحة
+    window.onload = loadTexts;
+  </script>
+
+</body>
+
+</html>
+
